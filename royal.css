@@ -1,0 +1,291 @@
+/* ============================================
+   ROYAL.CSS — Ornamentos de realeza británica
+   ============================================ */
+
+/* ---- Tipografía real ---- */
+.title-royal {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  letter-spacing: .35em;
+  text-transform: uppercase;
+  color: var(--royal-purple);
+  margin: 1rem 0 .5rem;
+  font-weight: 600;
+  position: relative;
+  z-index: 2;
+}
+
+/* ---- ESCUDO REAL ---- */
+.royal-crest {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 8px 15px rgba(75,46,131,.3));
+}
+.crest-crown {
+  font-size: 3rem;
+  color: var(--royal-gold);
+  animation: crownFloat 3s ease-in-out infinite;
+  text-shadow: 0 3px 8px rgba(201,162,39,.5);
+}
+@keyframes crownFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+.crest-body {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--royal-purple);
+  color: var(--royal-gold-light);
+  padding: .6rem 1.8rem;
+  border: 3px solid var(--royal-gold);
+  border-radius: 8px;
+  box-shadow: inset 0 0 0 3px var(--royal-purple),
+              inset 0 0 0 5px var(--royal-gold),
+              0 6px 14px rgba(0,0,0,.2);
+  margin-top: -10px;
+}
+.crest-lion { font-size: 1.3rem; }
+.crest-center {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--royal-gold-light);
+  padding: 0 .8rem;
+  border-left: 2px solid var(--royal-gold);
+  border-right: 2px solid var(--royal-gold);
+}
+.crest-ribbon {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.0rem;
+  letter-spacing: .3em;
+  color: var(--royal-purple);
+  background: var(--royal-gold-light);
+  padding: .25rem 1rem;
+  margin-top: .4rem;
+  border-radius: 3px;
+  font-weight: 600;
+}
+
+/* ---- Ornamentos florales en las esquinas ---- */
+.corner-ornament {
+  position: fixed;
+  font-size: 2.5rem;
+  color: var(--royal-gold);
+  opacity: .6;
+  z-index: 2;
+  pointer-events: none;
+  font-family: 'Playfair Display', serif;
+}
+.corner-tl { top: 1rem; left: 1.5rem; }
+.corner-tr { top: 1rem; right: 1.5rem; }
+.corner-bl { bottom: 1rem; left: 1.5rem; }
+.corner-br { bottom: 1rem; right: 1.5rem; }
+
+/* ---- Carta con marco doble dorado ---- */
+.letter {
+  background: var(--cream);
+  max-width: 700px;
+  width: 100%;
+  padding: clamp(2rem, 5vw, 3.5rem);
+  position: relative;
+  border-radius: 8px;
+  box-shadow:
+    0 25px 60px rgba(75,46,131,.3),
+    0 0 0 4px var(--royal-gold),
+    0 0 0 10px var(--cream),
+    0 0 0 13px var(--royal-purple),
+    0 0 0 15px var(--royal-gold);
+  background-image:
+    repeating-linear-gradient(
+      transparent,
+      transparent 31px,
+      rgba(91,141,239,.13) 32px
+    );
+  animation: fadeUp 1s ease forwards;
+  overflow: visible;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Marca de agua con corona */
+.letter-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-15deg);
+  font-size: 20rem;
+  color: var(--royal-gold);
+  opacity: .06;
+  pointer-events: none;
+  z-index: 0;
+  font-family: 'Playfair Display', serif;
+}
+
+/* Cinta dorada superior */
+.royal-ribbon-top {
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: linear-gradient(90deg, var(--royal-gold), var(--royal-gold-light), var(--royal-gold));
+  padding: .5rem 2rem;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(201,162,39,.4);
+  white-space: nowrap;
+}
+.ribbon-crown { color: var(--royal-purple); font-size: 1rem; }
+.ribbon-text {
+  font-family: 'Playfair Display', serif;
+  font-size: .7rem;
+  letter-spacing: .25em;
+  color: var(--royal-purple);
+  font-weight: 700;
+}
+
+/* ---- Cabecera de la carta ---- */
+.letter-header {
+  text-align: center;
+  margin-bottom: 1.8rem;
+  padding-bottom: 1.2rem;
+  position: relative;
+  z-index: 1;
+}
+.letter-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  color: var(--royal-purple);
+  margin-bottom: .4rem;
+}
+.letter-header p {
+  font-family: 'Caveat', cursive;
+  font-size: 1.4rem;
+  color: var(--hs-blue);
+}
+
+/* Divisor ornamental */
+.divider-royal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem auto 0;
+  max-width: 260px;
+  color: var(--royal-gold);
+  font-size: 1rem;
+}
+.divider-royal::before,
+.divider-royal::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--royal-gold), transparent);
+}
+.divider-royal.small { max-width: 180px; font-size: .8rem; }
+
+/* ---- Cuerpo de la carta ---- */
+.letter-body {
+  font-family: 'Caveat', cursive;
+  font-size: clamp(1.3rem, 3.5vw, 1.6rem);
+  line-height: 1.55;
+  color: #333;
+  white-space: pre-line;
+  position: relative;
+  z-index: 1;
+}
+.letter-body strong {
+  color: var(--hs-blue);
+  font-weight: 700;
+  background: linear-gradient(180deg, transparent 60%, rgba(255,209,102,.5) 60%);
+  padding: 0 .1em;
+}
+
+/* Letra capital ornamentada (drop cap) */
+.letter-body::first-letter {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5em;
+  float: left;
+  line-height: .85;
+  padding: .1em .12em 0 0;
+  color: var(--royal-purple);
+  font-weight: 700;
+}
+
+/* ---- Firma ---- */
+.signature {
+  margin-top: 2rem;
+  text-align: right;
+  font-family: 'Caveat', cursive;
+  font-size: 1.7rem;
+  color: var(--royal-purple);
+  position: relative;
+  z-index: 1;
+}
+.signature span {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: .8rem;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--royal-gold);
+  margin-top: .3rem;
+  font-weight: 600;
+}
+
+/* ---- Sello de lacre con R de Regina ---- */
+.wax-seal {
+  position: absolute;
+  bottom: -30px;
+  right: 50px;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle at 35% 30%, #d94848 0%, #a52a2a 50%, #7a1a1a 100%);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 8px 18px rgba(139,30,30,.6),
+    inset -4px -6px 10px rgba(0,0,0,.3),
+    inset 4px 4px 10px rgba(255,150,150,.3);
+  transform: rotate(-10deg);
+  z-index: 5;
+  border: 2px solid rgba(0,0,0,.15);
+}
+.wax-letter {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffe9a8;
+  line-height: 1;
+  text-shadow: 1px 1px 2px rgba(0,0,0,.4);
+}
+.wax-crown {
+  font-size: .9rem;
+  color: #ffe9a8;
+  margin-top: -2px;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 640px) {
+  .corner-ornament { font-size: 1.5rem; }
+  .wax-seal { width: 60px; height: 60px; right: 20px; bottom: -22px; }
+  .wax-letter { font-size: 1.4rem; }
+  .royal-ribbon-top { padding: .4rem 1rem; gap: .5rem; }
+  .ribbon-text { font-size: .55rem; letter-spacing: .15em; }
+  .letter-watermark { font-size: 12rem; }
+  .crest-body { padding: .5rem 1rem; gap: .5rem; }
+  .crest-center { font-size: 1.5rem; padding: 0 .5rem; }
+  .hs-confetti { width: 20px; opacity: .5; }
+  .hs-confetti span { width: 8px; height: 8px; }
+}
